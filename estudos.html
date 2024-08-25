@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Estudos Bíblicos Avançados">
+    <meta name="keywords" content="Estudos Bíblicos, Bíblia, Versos, Capítulos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos Bíblicos Avançados</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
+    <link rel="stylesheet" href="css/rockville.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+    <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+/* Título do estudo */
+.study-title {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+
+/* Conteúdo do estudo */
+.study-content {
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.study-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.study-content p {
+    margin: 0;
+    color: #34495e;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Abas */
+.tabs {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.tabs div {
+    padding: 12px 25px;
+    margin-right: 8px;
+    background: #ecf0f1;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1rem;
+    color: #7f8c8d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs div:last-child {
+    margin-right: 0;
+}
+
+.tabs div.active {
+    background: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.tabs div:hover {
+    transform: scale(1.05);
+}
+
+/* Conteúdo das Abas */
+.tab-content {
+    display: none;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Verso */
+.verse {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.verse p {
+    margin: 0;
+    font-style: italic;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+/* Estilização para dispositivos móveis */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs div {
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .study-content {
+        padding: 1rem;
+    }
+
+    .study-title {
+        font-size: 1.5rem;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Cabeçalho "Header" -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="header__logo">
+                        <a href="index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="index.html">Inicio</a></li>
+                                <li><a href="./about.html">Sobre</a></li>
+                                <li><a href="./discography.html">Discography</a></li>
+                                <li><a href="./tours.html">Tours</a></li>
+                                <li><a href="./videos.html">Videos</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="./about.html">About</a></li>
+                                        <li><a href="./blog.html">Blog</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero spad set-bg" data-setbg="img/hero-bg2.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero__text">
+                        <span>Aprofunde-se</span>
+                        <h1>Conheça</h1>
+                        <p>Aprenda os principais tópicos que a biblia pode te mostrar<br/>
+                            Temas inspiradores, conheça!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Study -->
+    <div class="container">
+        <h1>Estudos Bíblicos</h1>
+        <p>Explore nossos estudos bíblicos detalhados, com capítulos e versos relacionados.</p>
+
+        <div class="study-section">
+            <!-- Bible Study 1 -->
+            <div class="study-content" onclick="showStudy('study-1')">
+                <h4>O Amor de Deus</h4>
+                <p>Ver Estudo</p>
+            </div>
+            <div class="tab-container" id="study-1" style="display:none;">
+                <div class="tabs">
+                    <div class="tab-button active" onclick="showTab('tab1')">Capítulo 1</div>
+                    <div class="tab-button" onclick="showTab('tab2')">Capítulo 2</div>
+                    <div class="tab-button" onclick="showTab('tab3')">Capítulo 3</div>
+                </div>
+                <div class="tab-content active" id="tab1">
+                    <h5>Estudo do Capítulo 1:</h5>
+                    <div class="verses">
+                        <div class="verse">
+                            <h6>Verso 1</h6>
+                            <p>“Porque Deus amou o mundo de tal maneira que deu seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.”</p>
+                            <p><strong>João 3:16</strong></p>
+                        </div>
+                        <div class="verse">
+                            <h6>Verso 2</h6>
+                            <p>“Nisto consiste o amor: não em que nós tenhamos amado a Deus, mas em que ele nos amou a nós e enviou seu Filho como propiciação pelos nossos pecados.”</p>
+                            <p><strong>1 João 4:10</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab2">
+                    <h5>Estudo do Capítulo 2:</h5>
+                    <div class="verses">
+                        <div class="verse">
+                            <h6>Verso 1</h6>
+                            <p>“Mas Deus, sendo rico em misericórdia, por causa do grande amor com que nos amou,”</p>
+                            <p><strong>Efésios 2:4</strong></p>
+                        </div>
+                        <div class="verse">
+                            <h6>Verso 2</h6>
+                            <p>“O Senhor é longânimo e grande em poder, e não terá por inocente o culpado; o Senhor tem o seu caminho na tempestade e na bonança, e as nuvens são o pó dos seus pés.”</p>
+                            <p><strong>Naum 1:3</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <h5>Estudo do Capítulo 3:</h5>
+                    <div class="verses">
+                        <div class="verse">
+                            <h6>Verso 1</h6>
+                            <p>“Assim também o Pai celestial vos fará, se de coração não perdoardes cada um a seu irmão as suas ofensas.”</p>
+                            <p><strong>Mateus 18:35</strong></p>
+                        </div>
+                        <div class="verse">
+                            <h6>Verso 2</h6>
+                            <p>“Eu sou o bom pastor; o bom pastor dá a sua vida pelas ovelhas.”</p>
+                            <p><strong>João 10:11</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bible Study 2 -->
+            <div class="study-content" onclick="showStudy('study-2')">
+                <h4>A Fé que Move Montanhas</h4>
+                <p>Ver Estudo</p>
+            </div>
+            <div class="tab-container" id="study-2" style="display:none;">
+                <div class="tabs">
+                    <div class="tab-button active" onclick="showTab('tab4')">Capítulo 1</div>
+                    <div class="tab-button" onclick="showTab('tab5')">Capítulo 2</div>
+                    <div class="tab-button" onclick="showTab('tab6')">Capítulo 3</div>
+                </div>
+                <div class="tab-content active" id="tab4">
+                    <h5>Estudo do Capítulo 1:</h5>
+                    <div class="verses">
+                        <div class="verse">
+                            <h6>Verso 1</h6>
+                            <p>“Se tiverdes fé como um grão de mostarda, direis a este monte: Passa daqui para acolá, e ele passará; e nada vos será impossível.”</p>
+                            <p><strong>Mateus 17:20</strong></p>
+                        </div>
+                        <div class="verse">
+                            <h6>Verso 2</h6>
+                            <p>“E Jesus, olhando para eles, disse: Para os homens é impossível, mas para Deus tudo é possível.”</p>
+                            <p><strong>Mateus 19:26</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab5">
+                    <h5>Estudo do Capítulo 2:</h5>
+                    <div class="verses">
+                        <div class="verse">
+                            <h6>Verso 1</h6>
+                            <p>“Porque andamos por fé, e não por vista.”</p>
+                            <p><strong>2 Coríntios 5:7</strong></p>
+                        </div>
+                        <div class="verse">
+                            <h6>Verso 2</h6>
+                            <p>“A fé é a certeza de coisas que se esperam, a convicção de fatos que se não veem.”</p>
+                            <p><strong>Hebreus 11:1</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab6">
+                    <h5>Estudo do Capítulo 3:</h5>
+                    <div class="verses">
+                        <div class="verse">
+                            <h6>Verso 1</h6>
+                            <p>“Mas o justo viverá pela fé; e se ele recuar, a minha alma não tem prazer nele.”</p>
+                            <p><strong>Hebreus 10:38</strong></p>
+                        </div>
+                        <div class="verse">
+                            <h6>Verso 2</h6>
+                            <p>“Confia no Senhor de todo o teu coração, e não te estribes no teu próprio entendimento.”</p>
+                            <p><strong>Provérbios 3:5</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bible Study 3 -->
+<div class="study-content" onclick="showStudy('study-3')">
+    <h4>A Sabedoria de Salomão</h4>
+    <p>Ver Estudo</p>
+</div>
+<div class="tab-container" id="study-3" style="display:none;">
+    <div class="tabs">
+        <div class="tab-button active" onclick="showTab('tab7')">Capítulo 1</div>
+        <div class="tab-button" onclick="showTab('tab8')">Capítulo 2</div>
+        <div class="tab-button" onclick="showTab('tab9')">Capítulo 3</div>
+    </div>
+    <div class="tab-content active" id="tab7">
+        <h5>Estudo do Capítulo 1:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“O temor do Senhor é o princípio do conhecimento; os loucos desprezam a sabedoria e a instrução.”</p>
+                <p><strong>Provérbios 1:7</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Pede-me o que queres que eu te dê.”</p>
+                <p><strong>1 Reis 3:5</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab8">
+        <h5>Estudo do Capítulo 2:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“E Deus deu a Salomão sabedoria, e muitíssimo entendimento, e largueza de coração, como a areia que está na praia do mar.”</p>
+                <p><strong>1 Reis 4:29</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Bem-aventurado o homem que acha sabedoria, e o homem que adquire conhecimento;”</p>
+                <p><strong>Provérbios 3:13</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab9">
+        <h5>Estudo do Capítulo 3:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“A sabedoria é a coisa principal; adquire, pois, a sabedoria, sim, com tudo o que possuis adquire o conhecimento.”</p>
+                <p><strong>Provérbios 4:7</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Quem é sábio, e tem entendimento entre vós? Mostre pelo seu bom trato as suas obras em mansidão de sabedoria.”</p>
+                <p><strong>Tiago 3:13</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bible Study 4 -->
+<div class="study-content" onclick="showStudy('study-4')">
+    <h4>A Graça de Deus</h4>
+    <p>Ver Estudo</p>
+</div>
+<div class="tab-container" id="study-4" style="display:none;">
+    <div class="tabs">
+        <div class="tab-button active" onclick="showTab('tab10')">Capítulo 1</div>
+        <div class="tab-button" onclick="showTab('tab11')">Capítulo 2</div>
+        <div class="tab-button" onclick="showTab('tab12')">Capítulo 3</div>
+    </div>
+    <div class="tab-content active" id="tab10">
+        <h5>Estudo do Capítulo 1:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“Porque pela graça sois salvos, por meio da fé; e isto não vem de vós; é dom de Deus.”</p>
+                <p><strong>Efésios 2:8</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“A minha graça te basta, porque o meu poder se aperfeiçoa na fraqueza.”</p>
+                <p><strong>2 Coríntios 12:9</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab11">
+        <h5>Estudo do Capítulo 2:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“Porque o pecado não terá domínio sobre vós, pois não estais debaixo da lei, mas debaixo da graça.”</p>
+                <p><strong>Romanos 6:14</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“E a graça de nosso Senhor foi mais que abundante, com a fé e o amor que há em Cristo Jesus.”</p>
+                <p><strong>1 Timóteo 1:14</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab12">
+        <h5>Estudo do Capítulo 3:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“E todos nós recebemos também da sua plenitude, e graça por graça.”</p>
+                <p><strong>João 1:16</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Justificados gratuitamente pela sua graça, pela redenção que há em Cristo Jesus.”</p>
+                <p><strong>Romanos 3:24</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bible Study 5 -->
+<div class="study-content" onclick="showStudy('study-5')">
+    <h4>O Poder da Oração</h4>
+    <p>Ver Estudo</p>
+</div>
+<div class="tab-container" id="study-5" style="display:none;">
+    <div class="tabs">
+        <div class="tab-button active" onclick="showTab('tab13')">Capítulo 1</div>
+        <div class="tab-button" onclick="showTab('tab14')">Capítulo 2</div>
+        <div class="tab-button" onclick="showTab('tab15')">Capítulo 3</div>
+    </div>
+    <div class="tab-content active" id="tab13">
+        <h5>Estudo do Capítulo 1:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“E tudo o que pedirdes na oração, crendo, recebereis.”</p>
+                <p><strong>Mateus 21:22</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Confessai as vossas culpas uns aos outros, e orai uns pelos outros, para que sareis; a oração feita por um justo pode muito em seus efeitos.”</p>
+                <p><strong>Tiago 5:16</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab14">
+        <h5>Estudo do Capítulo 2:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“Não estejais inquietos por coisa alguma; antes, as vossas petições sejam em tudo conhecidas diante de Deus pela oração e súplica, com ação de graças.”</p>
+                <p><strong>Filipenses 4:6</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Perseverai em oração, velando nela com ação de graças;”</p>
+                <p><strong>Colossenses 4:2</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab15">
+        <h5>Estudo do Capítulo 3:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“E, orando, não useis de vãs repetições, como os gentios, que pensam que por muito falarem serão ouvidos.”</p>
+                <p><strong>Mateus 6:7</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Clama a mim, e responder-te-ei, e anunciar-te-ei coisas grandes e firmes que não sabes.”</p>
+                <p><strong>Jeremias 33:3</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bible Study 6 -->
+<div class="study-content" onclick="showStudy('study-6')">
+    <h4>A Promessa da Salvação</h4>
+    <p>Ver Estudo</p>
+</div>
+<div class="tab-container" id="study-6" style="display:none;">
+    <div class="tabs">
+        <div class="tab-button active" onclick="showTab('tab16')">Capítulo 1</div>
+        <div class="tab-button" onclick="showTab('tab17')">Capítulo 2</div>
+        <div class="tab-button" onclick="showTab('tab18')">Capítulo 3</div>
+    </div>
+    <div class="tab-content active" id="tab16">
+        <h5>Estudo do Capítulo 1:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“Porque todo aquele que invocar o nome do Senhor será salvo.”</p>
+                <p><strong>Romanos 10:13</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“E haverá salvação em nenhum outro, porque abaixo do céu não existe nenhum outro nome, dado entre os homens, pelo qual importa que sejamos salvos.”</p>
+                <p><strong>Atos 4:12</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab17">
+        <h5>Estudo do Capítulo 2:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“Porque Deus não nos destinou para a ira, mas para a aquisição da salvação, por nosso Senhor Jesus Cristo,”</p>
+                <p><strong>1 Tessalonicenses 5:9</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Pois o Filho do homem veio buscar e salvar o que se havia perdido.”</p>
+                <p><strong>Lucas 19:10</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab18">
+        <h5>Estudo do Capítulo 3:</h5>
+        <div class="verses">
+            <div class="verse">
+                <h6>Verso 1</h6>
+                <p>“E este é o testemunho: que Deus nos deu a vida eterna; e esta vida está em seu Filho.”</p>
+                <p><strong>1 João 5:11</strong></p>
+            </div>
+            <div class="verse">
+                <h6>Verso 2</h6>
+                <p>“Porque o Filho do homem não veio para destruir as almas dos homens, mas para salvá-las.”</p>
+                <p><strong>Lucas 9:56</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+            <!-- Add more studies as needed -->
+
+        </div>
+    </div>
+    <!-- Study End -->
+
+    <!-- Countdown Section Begin -->
+    <section class="countdown spad set-bg" data-setbg="img/countdown-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="countdown__text">
+                        <h1>Evento de Jovens!</h1>
+                        <h4>A Grande palavra de Deus!</h4>
+                    </div>
+                    <div class="countdown__timer" id="countdown-time">
+                        <div class="countdown__item">
+                            <span>20</span>
+                            <p>days</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>45</span>
+                            <p>hours</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>18</span>
+                            <p>minutes</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>09</span>
+                            <p>seconds</p>
+                        </div>
+                    </div>
+                    <div class="buy__tickets">
+                        <a href="#" class="primary-btn">Buy tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Countdown Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad set-bg" data-setbg="img/footer-bg.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer__address">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <p>Phone</p>
+                                <h6>1-677-124-44227</h6>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <p>Email</p>
+                                <h6>DJ.Music@gmail.com</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 col-md-6">
+                    <div class="footer__social">
+                        <h2>DJoz</h2>
+                        <div class="footer__social__links">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6">
+                    <div class="footer__newslatter">
+                        <h4>Stay With me</h4>
+                        <form action="#">
+                            <input type="text" placeholder="Email">
+                            <button type="submit"><i class="fa fa-send-o"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<div class="footer__copyright__text">
+				<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+			</div>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Função para exibir o estudo correspondente
+function showStudy(studyId) {
+    var allStudies = document.querySelectorAll('.tab-container');
+    allStudies.forEach(function(study) {
+        study.style.display = 'none';
+    });
+    document.getElementById(studyId).style.display = 'block';
+}
+
+// Função para exibir a aba correspondente
+function showTab(tabId) {
+    var tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+    });
+    document.getElementById(tabId).classList.add('active');
+    var buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(function(button) {
+        button.classList.remove('active');
+    });
+    document.querySelector('.tab-button[onclick="showTab(\'' + tabId + '\')"]').classList.add('active');
+}
+
+// Função para alternar a exibição dos versos
+function toggleVerse(verseId) {
+    var verse = document.getElementById(verseId);
+    if (verse.style.display === 'none' || verse.style.display === '') {
+        verse.style.display = 'block';
+    } else {
+        verse.style.display = 'none';
+    }
+}
+
+// Adiciona evento de clique a todos os elementos de verso
+document.querySelectorAll('.verse').forEach(function(verseElement) {
+    verseElement.addEventListener('click', function() {
+        var content = verseElement.querySelector('.verse-content');
+        toggleVerse(content.id);
+    });
+});
+
+    </script>
+</body>
+
+</html>
